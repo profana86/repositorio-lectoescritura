@@ -27,11 +27,31 @@
       fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
-    <script type="module" crossorigin src="./assets/index-oz2El5Xf.js"></script>
+    <script type="module" crossorigin src="./assets/index-oz2El5Xf.js?v=checkout-hotmart-20260713"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-VZSFZqVi.css">
   </head>
   <body>
     <div id="root"></div>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1059302659855530&ev=PageView&noscript=1" /></noscript>
+    <script>
+      (function () {
+        var checkoutUrl = 'https://pay.hotmart.com/V106722066A';
+
+        function wireCheckoutButtons() {
+          document.querySelectorAll('a.btn-gold, a#ebs-checkout').forEach(function (button) {
+            button.href = checkoutUrl;
+            button.rel = 'noopener';
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          wireCheckoutButtons();
+          new MutationObserver(wireCheckoutButtons).observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
